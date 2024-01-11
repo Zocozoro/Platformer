@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dcf7x6t386qvk"
-path="res://.godot/imported/palm.png-b3ab5a2872dda80d3ca4c038c697f7b6.ctex"
+uid="uid://mntyvclhv8w5"
+path="res://.godot/imported/pine.png-0fe24d37d247d412be6bf77eae004d34.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ExternalAssets/Sunny-land-files/Sunny-land-files/Graphical Assets/environment/Props/palm.png"
-dest_files=["res://.godot/imported/palm.png-b3ab5a2872dda80d3ca4c038c697f7b6.ctex"]
+source_file="res://Background/Images/pine.png"
+dest_files=["res://.godot/imported/pine.png-0fe24d37d247d412be6bf77eae004d34.ctex"]
 
 [params]
 

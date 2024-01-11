@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://srqdn4vl5h7a"
-path="res://.godot/imported/tileset.png-79d51f71614d1a20d69cf7da6ef8007f.ctex"
+uid="uid://dcf7x6t386qvk"
+path="res://.godot/imported/palm.png-f850081540f6433920e7572f25732b0e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ExternalAssets/Sunny-land-files/Sunny-land-files/Graphical Assets/environment/tileset.png"
-dest_files=["res://.godot/imported/tileset.png-79d51f71614d1a20d69cf7da6ef8007f.ctex"]
+source_file="res://Background/Images/palm.png"
+dest_files=["res://.godot/imported/palm.png-f850081540f6433920e7572f25732b0e.ctex"]
 
 [params]
 

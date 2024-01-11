@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://mntyvclhv8w5"
-path="res://.godot/imported/pine.png-bf12dfe196b5282b9bb8497d4205300f.ctex"
+uid="uid://srqdn4vl5h7a"
+path="res://.godot/imported/tileset.png-63b2c8800ccbf5613fe2a26d160590e2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ExternalAssets/Sunny-land-files/Sunny-land-files/Graphical Assets/environment/Props/pine.png"
-dest_files=["res://.godot/imported/pine.png-bf12dfe196b5282b9bb8497d4205300f.ctex"]
+source_file="res://Background/Images/tileset.png"
+dest_files=["res://.godot/imported/tileset.png-63b2c8800ccbf5613fe2a26d160590e2.ctex"]
 
 [params]
 

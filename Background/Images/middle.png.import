@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bk5yb2aygo3ew"
-path="res://.godot/imported/rock-1.png-f34e4dfe38b299b05d7da2a12e23a150.ctex"
+uid="uid://cq32nxla2oyph"
+path="res://.godot/imported/middle.png-a2ea2503cd7a4e75d62e839ef46b34e6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ExternalAssets/Sunny-land-files/Sunny-land-files/Graphical Assets/environment/Props/rock-1.png"
-dest_files=["res://.godot/imported/rock-1.png-f34e4dfe38b299b05d7da2a12e23a150.ctex"]
+source_file="res://Background/Images/middle.png"
+dest_files=["res://.godot/imported/middle.png-a2ea2503cd7a4e75d62e839ef46b34e6.ctex"]
 
 [params]
 

@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://c41xemqqf6r28"]
+[gd_scene load_steps=3 format=3 uid="uid://c41xemqqf6r28"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_ltmj7"]
+[ext_resource type="PackedScene" uid="uid://cuimvgqyrxh1p" path="res://Background/BG.tscn" id="2_hbccf"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_ltmj7")
@@ -18,6 +19,8 @@ offset_top = 296.0
 offset_right = 677.0
 offset_bottom = 441.0
 text = "Quit"
+
+[node name="BG" parent="." instance=ExtResource("2_hbccf")]
 
 [connection signal="pressed" from="Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]
