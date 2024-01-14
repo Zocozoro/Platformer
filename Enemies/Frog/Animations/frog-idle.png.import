@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://da40b2t84gd1a"
-path="res://.godot/imported/enemy-deadth.png-5eb12ba78932fde5b9eaf7a362e16d1a.ctex"
+uid="uid://bdoaw6l3a3x20"
+path="res://.godot/imported/frog-idle.png-9fe80397011e1549ca545682c94a62dc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ExternalAssets/Sunny-land-files/Sunny-land-files/Graphical Assets/spritesheets/enemy-deadth.png"
-dest_files=["res://.godot/imported/enemy-deadth.png-5eb12ba78932fde5b9eaf7a362e16d1a.ctex"]
+source_file="res://Enemies/Frog/Animations/frog-idle.png"
+dest_files=["res://.godot/imported/frog-idle.png-9fe80397011e1549ca545682c94a62dc.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bdoaw6l3a3x20"
-path="res://.godot/imported/frog-idle.png-68af5fcd9b8452efd540ca37de602481.ctex"
+uid="uid://bg6lnywrc3oxn"
+path="res://.godot/imported/frog-jump.png-d591e33779781ac41ade0578e559ca82.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ExternalAssets/Sunny-land-files/Sunny-land-files/Graphical Assets/spritesheets/frog-idle.png"
-dest_files=["res://.godot/imported/frog-idle.png-68af5fcd9b8452efd540ca37de602481.ctex"]
+source_file="res://Enemies/Frog/Animations/frog-jump.png"
+dest_files=["res://.godot/imported/frog-jump.png-d591e33779781ac41ade0578e559ca82.ctex"]
 
 [params]
 

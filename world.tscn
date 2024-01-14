@@ -1,24 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://cwjyhjn74fjjy"]
+[gd_scene load_steps=9 format=3 uid="uid://cwjyhjn74fjjy"]
 
 [ext_resource type="Texture2D" uid="uid://srqdn4vl5h7a" path="res://Background/Images/tileset.png" id="1_56opc"]
 [ext_resource type="PackedScene" uid="uid://d271xup7f4pu2" path="res://Player/player.tscn" id="1_b42eq"]
 [ext_resource type="Script" path="res://Background/BG.gd" id="1_uou8f"]
 [ext_resource type="Texture2D" uid="uid://duk0qvxqptvo1" path="res://Background/Images/back.png" id="2_i2oda"]
-
-[sub_resource type="GDScript" id="GDScript_u7fgs"]
-script/source = "extends Node2D
-
-
-# Called when the node enters the scene tree for the first time.
-#func _ready():
-	#var player = get_node(\"Player\")
-	#var label = get_node(\"Label\")
-	#label.text = player.DOUBLE_JUMP
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-	#pass
-"
+[ext_resource type="Script" path="res://HP.gd" id="4_frbi7"]
+[ext_resource type="PackedScene" uid="uid://dqtyb4j34v1cr" path="res://Enemies/Frog/Frog.tscn" id="5_xh6v5"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vcofh"]
 texture = ExtResource("1_56opc")
@@ -431,7 +418,6 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_vcofh")
 
 [node name="World" type="Node2D"]
-script = SubResource("GDScript_u7fgs")
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_k0hcw")
@@ -449,5 +435,30 @@ position = Vector2(574.5, 322.5)
 scale = Vector2(3.0026, 2.69583)
 texture = ExtResource("2_i2oda")
 
-[node name="Player" parent="." instance=ExtResource("1_b42eq")]
-position = Vector2(582, 257)
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="HP" type="Label" parent="UI"]
+offset_left = 14.0
+offset_top = 12.0
+offset_right = 54.0
+offset_bottom = 40.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
+text = "HP"
+script = ExtResource("4_frbi7")
+
+[node name="Player" type="Node2D" parent="."]
+
+[node name="Player" parent="Player" instance=ExtResource("1_b42eq")]
+position = Vector2(1426, 319)
+
+[node name="Mobs" type="Node2D" parent="."]
+
+[node name="Frog" parent="Mobs" instance=ExtResource("5_xh6v5")]
+position = Vector2(1919, 305)
+
+[node name="Frog2" parent="Mobs" instance=ExtResource("5_xh6v5")]
+position = Vector2(1714, 292)
+
+[node name="Frog3" parent="Mobs" instance=ExtResource("5_xh6v5")]
+position = Vector2(1816, 291)

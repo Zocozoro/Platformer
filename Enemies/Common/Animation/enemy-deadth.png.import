@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bg6lnywrc3oxn"
-path="res://.godot/imported/frog-jump.png-6da2b79fd3892f0fdf3c49c00e6fe505.ctex"
+uid="uid://da40b2t84gd1a"
+path="res://.godot/imported/enemy-deadth.png-df85d8428365293aa268537e9c5c7fd7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ExternalAssets/Sunny-land-files/Sunny-land-files/Graphical Assets/spritesheets/frog-jump.png"
-dest_files=["res://.godot/imported/frog-jump.png-6da2b79fd3892f0fdf3c49c00e6fe505.ctex"]
+source_file="res://Enemies/Common/Animation/enemy-deadth.png"
+dest_files=["res://.godot/imported/enemy-deadth.png-df85d8428365293aa268537e9c5c7fd7.ctex"]
 
 [params]
 

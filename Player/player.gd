@@ -1,18 +1,28 @@
 extends CharacterBody2D
 
+# Godot imports
+var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
+
+# Configuration
 const SPEED = 200.0
 const JUMP_VELOCITY = -400.0
+
+
+# Internal
+var HEALTH = 3
 var DOUBLE_JUMPED = true
 var DOUBLE_JUMP_READY = false
 
-# Get the gravity from the project settings to be synced with RigidBody nodes.
-var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
+# References
 @onready var anim = get_node("AnimationPlayer")
 @onready var animSprite = get_node("AnimatedSprite2D")
 
-
-#func _ready():
-	#anim.play("Idle")
+# Magic Strings
+var mg_anim_run = "Run"
+var mg_anim_jump = "Jump"
+var mg_anim_fall = "Fall"
+var mg_anim_idle = "Idle"
+var mg_anim_death = "Death"
 
 func _physics_process(delta):
 	if is_on_floor() and DOUBLE_JUMPED:
@@ -25,7 +35,7 @@ func _physics_process(delta):
 	# Handle jump.
 	if Input.is_action_just_pressed("ui_accept") and (is_on_floor() or (DOUBLE_JUMP_READY and not DOUBLE_JUMPED)):
 		velocity.y = JUMP_VELOCITY
-		anim.play("Jump")
+		anim.play(mg_anim_jump)
 		if DOUBLE_JUMP_READY:
 			DOUBLE_JUMPED = true
 			DOUBLE_JUMP_READY = false
@@ -35,7 +45,6 @@ func _physics_process(delta):
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var direction = Input.get_axis("ui_left", "ui_right")
-	#print(direction)
 	if direction == -1:
 		animSprite.flip_h = true
 	elif direction == 1:
@@ -44,13 +53,17 @@ func _physics_process(delta):
 	if direction:
 		velocity.x = direction * SPEED
 		if velocity.y == 0:
-			anim.play("Run")
+			anim.play(mg_anim_run)
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		if velocity.y == 0:
-			anim.play("Idle")
+			anim.play(mg_anim_idle)
 
 	if velocity.y > 0:
-		anim.play("Fall")
-
+		anim.play(mg_anim_fall)
+		
 	move_and_slide()
+
+	if HEALTH == 0:
+		self.queue_free()
+		get_tree().change_scene_to_file("res://world.tscn")
