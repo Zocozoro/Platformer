@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://cwjyhjn74fjjy"]
+[gd_scene load_steps=10 format=3 uid="uid://cwjyhjn74fjjy"]
 
 [ext_resource type="Texture2D" uid="uid://srqdn4vl5h7a" path="res://Background/Images/tileset.png" id="1_56opc"]
 [ext_resource type="PackedScene" uid="uid://d271xup7f4pu2" path="res://Player/player.tscn" id="1_b42eq"]
 [ext_resource type="Script" path="res://Background/BG.gd" id="1_uou8f"]
 [ext_resource type="Texture2D" uid="uid://duk0qvxqptvo1" path="res://Background/Images/back.png" id="2_i2oda"]
-[ext_resource type="Script" path="res://HP.gd" id="4_frbi7"]
+[ext_resource type="Script" path="res://Interface/HP.gd" id="4_frbi7"]
+[ext_resource type="Script" path="res://Interface/Gold.gd" id="5_uuj4d"]
 [ext_resource type="PackedScene" uid="uid://dqtyb4j34v1cr" path="res://Enemies/Frog/Frog.tscn" id="5_xh6v5"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vcofh"]
@@ -446,6 +447,16 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 40
 text = "HP"
 script = ExtResource("4_frbi7")
+
+[node name="Gold" type="Label" parent="UI"]
+offset_left = 12.0
+offset_top = 62.0
+offset_right = 67.0
+offset_bottom = 117.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
+text = "Gold"
+script = ExtResource("5_uuj4d")
 
 [node name="Player" type="Node2D" parent="."]
 

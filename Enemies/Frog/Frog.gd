@@ -3,6 +3,7 @@ extends CharacterBody2D
 # Configuration
 var _proximity_to_spawn_range = 50
 const SPEED = 100
+var bounty = 1
 
 # Godot
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
@@ -14,7 +15,7 @@ var NEAR_SPAWN = true
 var CURRENT_STATE = states.Idle
 
 # Possible TODO: Fuse these states with bools above
-enum states { Idle, Moving, Dying }
+enum states { Idle, Moving, Dying, Dead }
 
 # References
 @onready var player = get_node("../../Player/Player")
@@ -42,7 +43,9 @@ func process_movement(delta):
 		return_to_initial_position()
 	else:
 		wander_around()
-		
+	
+	if CURRENT_STATE == states.Dead:
+		death() # Feels wrong to be here, but don't have a 'process_state()' method
 	if CURRENT_STATE == states.Dying:
 		self.velocity.x = 0
 	else:
@@ -60,9 +63,8 @@ func process_animation():
 	match CURRENT_STATE:
 		states.Dying:
 			animSprite.play(mg_anim_death)
-			# This probably should not be here?
 			await animSprite.animation_finished
-			self.queue_free()
+			CURRENT_STATE = states.Dead
 		states.Moving:
 			animSprite.play(mg_anim_jump)
 		states.Idle:
@@ -90,6 +92,11 @@ func return_to_initial_position():
 	if distance < _proximity_to_spawn_range:
 		NEAR_SPAWN = true
 		
+func death():
+	self.queue_free()
+	Game.gold += self.bounty
+	Utils.saveGame()
+		
 func wander_around():
 	# Just stop for now
 	self.velocity.x = 0
@@ -108,5 +115,5 @@ func _on_player_death_body_entered(body):
 
 func _on_player_collision_body_entered(body):
 	if body.name == mg_playerName:
-		body.HEALTH -= 1
+		Game.playerHP -= 1
 		CURRENT_STATE = states.Dying

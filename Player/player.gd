@@ -7,9 +7,7 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 const SPEED = 200.0
 const JUMP_VELOCITY = -400.0
 
-
 # Internal
-var HEALTH = 3
 var DOUBLE_JUMPED = true
 var DOUBLE_JUMP_READY = false
 
@@ -64,6 +62,6 @@ func _physics_process(delta):
 		
 	move_and_slide()
 
-	if HEALTH == 0:
+	if Game.playerHP == 0:
 		self.queue_free()
 		get_tree().change_scene_to_file("res://world.tscn")
