@@ -11,9 +11,9 @@ config_version=5
 [application]
 
 config/name="Platformer"
-run/main_scene="res://mainMenu.tscn"
+run/main_scene="res://MainMenu/mainMenu.tscn"
 config/features=PackedStringArray("4.2", "Mobile")
-config/icon="res://icon.svg"
+config/icon="res://MainMenu/icon.svg"
 
 [autoload]
 

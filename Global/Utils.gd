@@ -1,5 +1,8 @@
 extends Node
 
+# Magic String
+var mg_playerName = "Player"
+
 const SAVE_PATH = "res://savegame.bin"
 
 func saveGame():

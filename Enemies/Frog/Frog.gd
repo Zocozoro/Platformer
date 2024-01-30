@@ -23,7 +23,6 @@ enum states { Idle, Moving, Dying, Dead }
 @onready var initial_position = self.get_position()
 
 # Magic String
-var mg_playerName = "Player"
 var mg_anim_jump = "Jump"
 var mg_anim_idle = "Idle"
 var mg_anim_death = "Death"
@@ -102,18 +101,18 @@ func wander_around():
 	self.velocity.x = 0
 
 func _on_player_detection_body_entered(body):
-	if body.name == mg_playerName:
+	if body.name == Utils.mg_playerName:
 		CHASE = true;
 		
 func _on_player_detection_body_exited(body):
-	if body.name == mg_playerName: 
+	if body.name == Utils.mg_playerName: 
 		CHASE = false;
 
 func _on_player_death_body_entered(body):
-	if body.name == mg_playerName:
+	if body.name == Utils.mg_playerName:
 		CURRENT_STATE = states.Dying
 
 func _on_player_collision_body_entered(body):
-	if body.name == mg_playerName:
+	if body.name == Utils.mg_playerName:
 		Game.playerHP -= 1
 		CURRENT_STATE = states.Dying

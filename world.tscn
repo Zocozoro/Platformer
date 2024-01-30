@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://cwjyhjn74fjjy"]
+[gd_scene load_steps=11 format=3 uid="uid://cwjyhjn74fjjy"]
 
 [ext_resource type="Texture2D" uid="uid://srqdn4vl5h7a" path="res://Background/Images/tileset.png" id="1_56opc"]
 [ext_resource type="PackedScene" uid="uid://d271xup7f4pu2" path="res://Player/player.tscn" id="1_b42eq"]
@@ -7,6 +7,7 @@
 [ext_resource type="Script" path="res://Interface/HP.gd" id="4_frbi7"]
 [ext_resource type="Script" path="res://Interface/Gold.gd" id="5_uuj4d"]
 [ext_resource type="PackedScene" uid="uid://dqtyb4j34v1cr" path="res://Enemies/Frog/Frog.tscn" id="5_xh6v5"]
+[ext_resource type="Script" path="res://Collectables/Collectables.gd" id="8_nm5ek"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vcofh"]
 texture = ExtResource("1_56opc")
@@ -473,3 +474,11 @@ position = Vector2(1714, 292)
 
 [node name="Frog3" parent="Mobs" instance=ExtResource("5_xh6v5")]
 position = Vector2(1816, 291)
+
+[node name="Collectables" type="Node2D" parent="."]
+script = ExtResource("8_nm5ek")
+
+[node name="Timer" type="Timer" parent="Collectables"]
+autostart = true
+
+[connection signal="timeout" from="Collectables/Timer" to="Collectables" method="_on_timer_timeout"]

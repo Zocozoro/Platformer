@@ -1,6 +1,6 @@
 extends Node2D
 
-var skip_title_screen = false
+var skip_title_screen = true
 
 # Hack for easier debug
 func _enter_tree():
